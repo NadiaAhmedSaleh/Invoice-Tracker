@@ -1,0 +1,22 @@
+
+
+CREATE TABLE Users
+(
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Username CHAR(100) NOT NULL,
+    Fullname CHAR(100) NOT NULL,
+    Email CHAR(100) NOT NULL,
+    Password CHAR(100) NOT NULL
+);
+
+CREATE TABLE Invoice
+(
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Issuer CHAR(100) NOT NULL,
+    Status CHAR(50) NOT NULL,
+    Amount INT NOT NULL,
+    Date_Issued NUMERIC NOT NULL,
+    Due_Date NUMERIC NOT NULL,
+    User_Id INT NOT NULL,
+    FOREIGN KEY(User_Id) REFERENCES Users(Id)
+);
