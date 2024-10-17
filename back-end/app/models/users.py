@@ -1,19 +1,35 @@
-from datetime import datetime
 from app.extensions import db
+from flask_login import UserMixin 
+from werkzeug.security import generate_password_hash, check_password_hash 
+from app import login_manager
+from flask import render_template, url_for, request, redirect
 
-class Users(db.Model):
+
+
+class Users(db.Model, UserMixin):
     id= db.Column(db.Integer, primary_key=True)
-    user_name=db.Column(db.String(100), nullable=False)
+    username=db.Column(db.String(100),unique=True, nullable=False)
     full_name=db.Column(db.String(100), nullable=False)
     email=db.Column(db.String(100), nullable=False)
-    password=db.Column(db.String(100), nullable=False)
+    password=db.Column(db.String(128), nullable=False)
 
-    
     @property
     def serialize(self):
         return {
             'id': self.id,
-            'user_name': self.user_name,
+            'username': self.username,
             'full_name': self.full_name,
             'email': self.email
         }
+    
+    def check_password(self, password):
+        return check_password_hash(self.password, password)
+    
+    def set_password(self, password):
+        self.password = generate_password_hash(password)
+
+    
+@login_manager.user_loader
+def load_user(user_id):
+    return Users.query.get(user_id)  
+             

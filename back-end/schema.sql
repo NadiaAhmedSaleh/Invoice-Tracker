@@ -4,9 +4,9 @@ CREATE TABLE Users
 (
     Id INTEGER PRIMARY KEY AUTOINCREMENT,
     Username CHAR(100) NOT NULL,
-    Fullname CHAR(100) NOT NULL,
+    Full_name CHAR(100) NOT NULL,
     Email CHAR(100) NOT NULL,
-    Password CHAR(100) NOT NULL
+    Password CHAR(128) NOT NULL
 );
 
 CREATE TABLE Invoice

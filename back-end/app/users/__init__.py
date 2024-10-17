@@ -1,11 +1,4 @@
-from flask import Flask
-from config import Config
-from app.extensions import db
+from flask import Blueprint
+users_bp = Blueprint('users', __name__)
 
-
-def create_app(configirations=Config):
-    app=Flask(__name__)
-    app.config.from_object(configirations)
-    db.init_app(app)
-    return app
-
+from app.users import routes

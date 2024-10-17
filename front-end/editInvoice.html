@@ -1,81 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Invoice App</title>
-    <link rel="stylesheet" href="../static/style.css">
-</head>
-<body>
-    
+    <link rel="stylesheet" href="../static/style.css" />
+  </head>
+  <body>
+    <div class="add-invoice-page">
+      <div class="add-invoice">
+        <h2>Edit an Invoice</h2>
+        <form class="add-form" action = "http://localhost:5000/invoices//update" method = "PUT">
+          <h4>Bill From :</h4>
+          <div class="main-info">
+            <input
+              type="text"
+              id="lname"
+              name="lname"
+              placeholder="Full Name"
+              required
+            />
 
-   
-  
-   
-    
+            <label class="switch">
+              <input type="checkbox" />
+              <span class="slider round" id="sliderBtn" onclick="changeStatus()">Pending</span>
+            </label>
+          </div>
 
-        
-        <div class="add-invoice-page">
-            <div class="add-invoice">
-                <form class="add-form">
-                 
-                    <h4>Bill From :</h4>
-                    <div class="main-info">
+          <h4>Contact information :</h4>
+          <div class="contact-info">
+            <input
+              type="text"
+              id="password"
+              name="password"
+              placeholder="Phone"
+              required
+            />
 
-                     <input type="text" id="lname" name="lname" placeholder="Full Name">
-                       
-                     
-                     <label class="switch">
-                            <input type="checkbox">
-                            <span class="slider round">Pending</span>
-                          </label>
+            <input type="text" id="email" name="email" placeholder="Email" />
+          </div>
 
-                    </div>
-                  
-                    <h4>Contact information :</h4>
-                    <div class="contact-info">
-                    
+          <h4>Bill Information :</h4>
+          <div class="bill-info">
+            <input
+              type="number"
+              id="amount"
+              name="amount"
+              placeholder="Amount"
+              required
+            />
 
-                     
-                      <input type="text" id="password" name="password" placeholder="Phone">
+            <input type="date" id="date" name="date" placeholder="Date" required />
+
+            <input
+              type="date"
+              id="dueDate"
+              name="Due Date"
+              placeholder="Due Date"
+              required
+            />
+          </div>
+
+          <button class="submit-btn">Submit</button>
+        </form>
+      </div>
+    </div>
 
 
-                       
-                        <input type="text" id="email" name="email" placeholder="Email">
-                    
-
-                    </div>
-
-
-                    <h4>Bill Information :</h4>
-                    <div class="bill-info">
-
-                        
-                        <input type="number" id="amount" name="amount" placeholder="Amount">
-  
-  
-                          <input type="date" id="date" name="date" placeholder="Date">
-
-                      
-                          <input type="date" id="dueDate" name="Due Date" placeholder="Due Date">
-
-                    </div>
-                    
-                    
-                    <button class="submit-btn">Submit</button>
-
-                    
-                  </form>
-             </div>   
-        
-        
-             
-        </div>
-
-   
-
- 
-    
-
-</body>
+    <script src="../static/main.js"></script>
+  </body>
 </html>
