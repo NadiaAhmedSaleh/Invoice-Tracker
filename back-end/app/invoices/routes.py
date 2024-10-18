@@ -12,16 +12,16 @@ from flask_login import login_required , current_user
 @invoices_bp.route('/list', methods=['GET'])
 # @login_required
 def list():
-    status_arg = request.args.get('status')
-    invoice = Invoice(**request.get_json())
-
-    if current_user.id == invoice.user_id:
-       if status_arg is None:
-        invoices = Invoice.query.all()
-       else: invoices = Invoice.query.filter_by(status=status_arg)
-       return make_response(jsonify(invoices=[i.serialize for i in invoices]), 200)
-    else:
-       return make_response("unauthorized" , 401)
+   status_arg = request.args.get('status') 
+    ##select all from invoices where current_user.id == user_id
+    ##select all from invoices where status = paid and user_id =4
+   if status_arg is None:
+      invoices = Invoice.query.filter_by(user_id=current_user.id)
+   else: 
+      invoices = Invoice.query.filter_by(status=status_arg).filter_by(user_id=current_user.id)
+      
+   return make_response(jsonify(invoices=[i.serialize for i in invoices]), 200)
+     
 #Create invoice#
 
 @invoices_bp.route('/add', methods=['POST'])
