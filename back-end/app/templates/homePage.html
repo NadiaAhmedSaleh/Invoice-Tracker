@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice Tracker</title>
+    <link rel="stylesheet" href="../static/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+
+ 
+  </head>
+  <body>
+    <div class="mainPage">
+      <div class="topnav">
+        <a class="active" href="#home">Invoicer</a>
+        <h2 id="welcome">Welcome <span>{{ current_user.username }}</span></h2>
+        <a href="{{url_for('users.logout')}}" ><i class="fa-solid fa-right-from-bracket"></i></a>
+       
+        
+      </div>
+      <main class="mainSection">
+        
+        
+        <section class="header">
+
+          <div class="left-side">
+            
+              <h2 class="invoices">Invoices</h2>
+           
+            
+            <p id="totalNumber">There are {{invoices.count()}} in total</p>
+<a href="{{url_for("invoices.get_history")}}">history</a>
+          </div>
+         
+          <hr>
+          <div class="right-side">
+      
+            <div class="add"> 
+              <i class="fa-solid fa-plus"></i>
+            <a class="add-link" href="{{url_for('invoices.add')}}">
+              Add Invoice 
+            </a>
+            </div>
+
+            <div>
+              <form action="{{url_for("invoices.list")}}" method="GET" >
+
+                
+               <div class="filter">
+                <select name="status" id="filter-status" class="filter-status">
+                  <option value="">Filter by Status</option>
+                  <option value="Paid" id="paid">Paid</option>
+                  <option value="Pending" id="pending">Pending</option>
+                </select>
+                <button class="submit-btn" type="submit">Submit</button>
+               </div>
+                
+              </form>
+              
+            </div>
+           
+
+           
+           
+          </div>
+
+          
+          
+        </section>
+  
+        <section class="table" >
+          <table >
+            <thead>
+              <th>ID</th>
+              <th>Biller name</th>
+              <th>Amount</th>
+              <th>Due Date</th>
+              <th>Statues</th>
+              <th>Action</th>
+              <th>Edit</th>
+           
+            </thead>
+            <tbody id="invoicesRow">
+              {% for item in invoices %}
+              <tr>
+                <td>{{item.id}}</td>
+                <td>{{item.issuer}}</td>
+                <td><B>{{item.amount}}</B></td>
+                <td>{{item.due_date}}</td>
+                <td> <a class="statues">{{item.status}}</a></td>
+                <td> 
+                  {% if item.status == 'Paid' %} <button class="deleteBtn" id="deleteBtn" onclick="deleteInvoice('{{item.id}}')">Delete</button> {% endif %} 
+                  {% if item.status == 'Pending' %} <button class="markAsPaidBtn" id="markAsPaidBtn" onclick="markInvoiceAsPaid('{{item.id}}')">Mark As Paid</button>{% endif %}  </td>
+                  <td  ><a class="editBtn"  href="{{url_for('invoices.update', id=item.id)}}">Edit</a></td>
+                </tr>
+              {% endfor %}
+              
+                
+                
+            
+
+          </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+    {% block content %}
+
+    <script type="text/javascript">
+      var user = '{{current_user}}';
+    </script>
+    {% endblock %}
+
+    <script src="../static/main.js"></script>
+  </body>
+</html>

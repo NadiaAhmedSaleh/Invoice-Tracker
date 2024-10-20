@@ -1,0 +1,24 @@
+{'id': 9, 'issuer': 'noon store', 'status': 'Paid', 'amount': 700, 'date_issued': datetime.date(2007, 1, 25), 'due_date': datetime.date(2007, 1, 25), 'user_id': 1}
+{'id': 10, 'issuer': 'kenz store', 'status': 'Paid', 'amount': 700, 'date_issued': datetime.date(2007, 1, 25), 'due_date': datetime.date(2007, 1, 25), 'user_id': 1}
+{'id': 11, 'issuer': 'kenz store', 'status': 'Paid', 'amount': 700, 'date_issued': datetime.date(2007, 1, 25), 'due_date': datetime.date(2007, 1, 25), 'user_id': 1}
+{'id': 1, 'issuer': 'zero', 'status': 'Paid', 'amount': 5000, 'date_issued': datetime.date(2007, 1, 1), 'due_date': datetime.date(2007, 1, 1), 'user_id': 1}
+{'id': 12, 'issuer': 'kenz', 'status': 'Paid', 'amount': 5000, 'date_issued': datetime.date(2024, 10, 25), 'due_date': datetime.date(2024, 10, 31), 'user_id': 1}
+{'id': 2, 'issuer': 'noon', 'status': 'Paid', 'amount': 40000, 'date_issued': datetime.date(2011, 10, 21), 'due_date': datetime.date(2010, 11, 1), 'user_id': 1}
+{'id': 3, 'issuer': 'Bein', 'status': 'Paid', 'amount': 300, 'date_issued': datetime.date(2007, 1, 1), 'due_date': datetime.date(2007, 1, 1), 'user_id': 1}
+{'id': 15, 'issuer': 'hello', 'status': 'Paid', 'amount': 5050, 'date_issued': datetime.date(2024, 10, 8), 'due_date': datetime.date(2024, 10, 31), 'user_id': 1}
+{'id': 14, 'issuer': 'hello', 'status': 'Paid', 'amount': 500000, 'date_issued': datetime.date(2024, 10, 31), 'due_date': datetime.date(2024, 10, 30), 'user_id': 1}
+{'id': 13, 'issuer': 'hello', 'status': 'Paid', 'amount': 5000, 'date_issued': datetime.date(2024, 10, 31), 'due_date': datetime.date(2024, 10, 31), 'user_id': 1}
+{'id': 16, 'issuer': 'vodafone', 'status': 'Paid', 'amount': 5000, 'date_issued': datetime.date(2024, 10, 15), 'due_date': datetime.date(2024, 10, 30), 'user_id': 1}
+{'id': 19, 'issuer': 'test invoice', 'status': 'Paid', 'amount': 4555, 'date_issued': datetime.date(2024, 10, 21), 'due_date': datetime.date(2024, 10, 23), 'user_id': 1}
+{'id': 17, 'issuer': 'what', 'status': 'Paid', 'amount': 5000, 'date_issued': datetime.date(2024, 10, 22), 'due_date': datetime.date(2024, 10, 24), 'user_id': 1}
+{'id': 18, 'issuer': 'kenz', 'status': 'Paid', 'amount': 4500, 'date_issued': datetime.date(2024, 10, 22), 'due_date': datetime.date(2024, 10, 23), 'user_id': 1}
+{'id': 20, 'issuer': 'noon', 'status': 'Paid', 'amount': 505, 'date_issued': datetime.date(2024, 10, 23), 'due_date': datetime.date(2024, 10, 30), 'user_id': 1}
+{'id': 21, 'issuer': 'noon', 'status': 'Paid', 'amount': 566, 'date_issued': datetime.date(2024, 10, 30), 'due_date': datetime.date(2024, 10, 31), 'user_id': 1}
+{'id': 22, 'issuer': 'ssss33', 'status': 'Paid', 'amount': 333, 'date_issued': datetime.date(2024, 10, 20), 'due_date': datetime.date(2024, 10, 21), 'user_id': 1}
+{'id': 23, 'issuer': 'wew', 'status': 'Paid', 'amount': 333, 'date_issued': datetime.date(2024, 10, 20), 'due_date': datetime.date(2024, 10, 22), 'user_id': 1}
+{'id': 26, 'issuer': 'heba', 'status': 'Paid', 'amount': 500500, 'date_issued': datetime.date(2024, 10, 31), 'due_date': datetime.date(2024, 10, 31), 'user_id': 1}
+{'id': 24, 'issuer': 'ddd', 'status': 'Paid', 'amount': 232, 'date_issued': datetime.date(2024, 10, 20), 'due_date': datetime.date(2024, 10, 21), 'user_id': 1}
+{'id': 25, 'issuer': 'hello', 'status': 'Paid', 'amount': 5000, 'date_issued': datetime.date(2024, 11, 7), 'due_date': datetime.date(2024, 10, 31), 'user_id': 1}
+{'id': 27, 'issuer': 'sdaa', 'status': 'Paid', 'amount': 3323, 'date_issued': datetime.date(2024, 10, 21), 'due_date': datetime.date(2024, 10, 27), 'user_id': 1}
+{'id': 5, 'issuer': 'etisalate', 'status': 'Paid', 'amount': 700, 'date_issued': datetime.date(2007, 1, 25), 'due_date': datetime.date(2007, 1, 25), 'user_id': 2}
+{'id': 29, 'issuer': 'noon', 'status': 'Paid', 'amount': 5000, 'date_issued': datetime.date(2024, 10, 24), 'due_date': datetime.date(2024, 10, 31), 'user_id': 1}

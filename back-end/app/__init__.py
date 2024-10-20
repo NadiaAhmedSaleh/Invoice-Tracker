@@ -1,7 +1,7 @@
-from flask import Flask
+from flask import Flask, render_template ,redirect , url_for
 from config import Config
 from app.extensions import db
-from flask_login import LoginManager
+from flask_login import LoginManager, current_user
 from flask_bcrypt import Bcrypt
 from flask_cors import CORS
 
@@ -20,5 +20,11 @@ def create_app(configirations=Config):
     from app.users import users_bp
     app.register_blueprint(users_bp, url_prefix='/users')
     
-
+    @app.route('/')
+    @app.route('/home')
+    def home():
+        if current_user.is_anonymous:
+            return redirect(url_for('users.login'))
+        return redirect(url_for('invoices.list'))
+        
     return app

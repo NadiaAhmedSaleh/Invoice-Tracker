@@ -1,0 +1,483 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url(hhholographic.png);
+    background-size: cover;
+
+}
+
+#none{
+  display: none;
+}
+
+.mainPage{
+  height: 100vh;
+}
+
+.editBtn{
+
+  background-color: #04AA6D; 
+  border-radius: 10px;
+  color: white;
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+  /* main page */
+
+  .topnav {
+    overflow: hidden;
+    
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .topnav a {
+     
+    color: #5b6eff;
+    font-weight: 500;
+    text-align: center;
+    padding: 16px 16px;
+    text-decoration: none;
+    font-size: 25px;
+
+  }
+  
+  .topnav a:hover {
+    color: #F4F4F9;
+    transition: 0.3s;
+  }
+  
+ 
+  
+
+  .right-side{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+  
+    
+  }
+
+  
+.add{
+
+  border-radius: 50px;
+  background-color: #A4C8FD;
+  color: white;
+  padding: 5px 5px 5px 5px;
+  width: 120px;
+  cursor: pointer;
+  border: none;
+
+}
+
+.fa-plus {
+  font-size: 20px;
+  color: #A4C8FD;
+  text-align: center;
+  border-radius: 50%;
+  background-color: white;
+  border:  2px solid #A4C8FD;
+
+  
+}
+
+
+
+  .add-link{
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+  }
+
+  .filter-status{
+    margin-top: 7px;
+    width: 140px;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 50px;
+    background-color: #A4C8FD;
+    border: none;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    
+  }
+
+  
+
+/* table button*/
+
+  
+
+  .deleteBtn{
+    background-color: #FFF9EF;
+    padding: 7px 20px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    background-color: rgb(197, 103, 103);
+    border: none;
+    cursor: pointer;
+  }
+
+  .markAsPaidBtn{
+    background-color: #FFF9EF;
+    padding: 5px 20px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 400;
+    background-color: rgb(197, 103, 103);
+    border: 1px solid red;
+    cursor: pointer;
+  }
+
+  
+   
+
+  .mainSection {
+    height: auto;
+    margin: auto;
+    width: 65%;
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 9px 9px 9px 9px rgba(0,0,0,0.1);
+
+    
+  }
+
+.left-side{
+  color:#a1c4fd;
+  width: 100%; 
+  display: flex;
+  justify-content: space-between;
+
+}
+
+#totalNumber{
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.invoices{
+  margin-top: 15px;
+}
+ .table{
+    overflow-x:auto;
+ }
+
+  table {
+    border-collapse: collapse;  
+    width: 100%; 
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 16px;
+  }
+
+  tr{
+    margin-top: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
+    
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+
+  .statues{
+
+    background-color: #FFF9EF;
+    width: 30px;
+    height: 30px;
+    padding:5px 15px 5px 15px;
+    border-radius: 10px;
+    color: orange;
+    font-weight: 600;
+    border: 1px solid orange;
+    cursor: pointer;
+  }
+
+
+  /*-----------------------------------*/
+
+  /*Sign up & sign in page*/
+
+ 
+  .sign-up{
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 100vh;
+    color:#A4C8FD;
+  }
+
+  
+
+  .text{
+    color:#A4C8FD;
+  }
+
+  .text h1{
+    margin: 10px;
+  }
+  
+
+  .signUpForm{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    border-radius: 20px;
+    margin-top: 10px;
+    text-align: center;
+  
+  }
+
+  input {
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 2px;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: #F2F2F2;
+  }
+
+  .labels{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 70%;
+
+  }
+
+  label{
+    margin: 5px 10px 2px 10px;
+   
+    font-weight: 500;
+  }
+ 
+  input:focus {
+   
+   border-bottom: 2px solid #A4C8FD;;
+   transition: 0.5sec;
+    border-radius: 10px;
+    outline: none;
+  }
+
+
+
+
+  .signup-btn{
+    width: 150px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: #A4C8FD;;
+    color: white;
+    font-weight: 700;
+    border:none;
+    margin-top: 10px;
+  }
+
+  .signup-btn:hover{
+    
+    border-radius: 50px;
+    background-color: #F2F2F2;
+    color: #A4C8FD;;
+    font-weight: 700;
+    border:1px solid #A4C8FD;;
+    transition: 0.5s;
+    outline: none;
+    
+  }
+
+  .sign-up a{
+    text-decoration: none;
+    color:#A4C8FD;
+    font-weight: 700;
+  }
+
+
+
+  /*-----------------------------------*/
+
+  /*Add & edit invoice page*/
+
+  .add-invoice-page{
+
+   margin-top: 30px;
+    
+  }
+
+  .add-invoice{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 50%;
+    width: 50%;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: 9px 9px 9px 9px rgba(0,0,0,0.1);
+    color:#A4C8FD;
+    padding: 20px;
+    margin: auto;
+
+  }
+
+  .history{
+    color: #A4C8FD;
+    font-size: 20px;
+ }
+
+
+
+  
+/* Rounded sliders */
+
+.switch {
+    position: relative;
+    margin-bottom: 15px;
+    width: 60px;
+    height: 34px;
+    font-weight: 700;
+    color: white;
+    
+  }
+  
+ 
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(240, 167, 32);
+    transition: .4s;
+    
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 45px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+  }
+  
+  
+  input:checked + .slider {
+    background-color:#49c54d;
+  }
+  
+  
+  input:checked + .slider:before {  
+    transform: translateX(55px);
+    right:100px;
+    
+  }
+  
+  input + .slider:before {  
+    transform: translateX(-40px);
+    right:100px;
+    
+  }
+
+.slider.round {
+    border-radius: 34px;
+    padding-top: 5px;
+    text-align:center;
+    width:130px;
+    
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  .add-form input{
+    width: 50%;
+    padding: 12px 20px;
+    margin-bottom: 15px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: #F2F2F2;
+    margin-right: 20px;
+  }
+
+ 
+
+  .main-info{
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+
+  .contact-info{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+  .bill-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+  .address-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .submit-btn{
+   
+    width: 120px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: #FFFFFF;
+    color:#A4C8FD;
+    font-weight: 700;
+    border:1px solid #A4C8FD;
+    
+
+  }
+  
+  .submit-btn:hover{
+    background-color:  #49c54d;
+    border: none;
+    color: white;
+    transition: 0.3s;
+  }

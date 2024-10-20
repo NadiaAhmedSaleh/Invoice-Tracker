@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice App</title>
+    <link rel="stylesheet" href="../static/style.css" />
+  </head>
+  <body>
+    <div class="add-invoice-page">
+      <div class="add-invoice">
+        <h2>Edit an Invoice</h2>
+        <form class="add-form" action = "{{url_for("invoices.update")}}" method = "POST">
+          <h4>Bill From :</h4>
+          <div class="main-info">
+            <input
+              type="text"
+              id="lname"
+              name="issuer"
+              placeholder="Full Name"
+              value={{invoice.issuer}}
+              
+            />
+
+            <input 
+            type="number"
+            id="none"
+            name="id"
+            value={{invoice.id}}
+            />
+
+            <label class="switch">
+              <input type="checkbox" name="status"/>
+              <span class="slider round" id="sliderBtn" onclick="changeStatus()">Pending</span>
+            </label>
+          </div>
+      
+         
+
+          <h4>Bill Information :</h4>
+          <div class="bill-info">
+            <input
+              type="number"
+              id="amount"
+              name="amount"
+              placeholder="Amount"
+              value={{invoice.amount}}
+              
+            />
+
+            <input type="date" id="date" name="date_issued" placeholder="Date" value={{invoice.date_issued}}  />
+
+            <input
+              type="date"
+              id="dueDate"
+              name="due_date"
+              placeholder="Due Date"
+              value={{invoice.due_date}}
+              
+            />
+          </div>
+
+          <button class="submit-btn" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+
+
+    <script src="../static/main.js"></script>
+  </body>
+</html>
