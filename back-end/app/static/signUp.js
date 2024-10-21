@@ -1,92 +1,75 @@
 //front validation
-let fullName=document.getElementById('fullName');
-let userName=document.getElementById('userName');
-let userEmail=document.getElementById('email');
-let password=document.getElementById('password');
-let repassword=document.getElementById('repassword');
-let signUpBtn=document.getElementById('signUpBtn');
+
+const fullName=document.getElementById('fullName');
+const userName=document.getElementById('userName');
+const userEmail=document.getElementById('email');
+const password=document.getElementById('password');
+const repassword=document.getElementById('repassword');
+const signUpBtn=document.getElementById('signUpBtn');
+
+const errorText=document.getElementById("nameError");
 
 
-// const signUpForm = document.getElementById('signUpForm');
-// signUpForm.addEventListener('submit', (event) => {
-//     event.preventDefault(); 
+//get email 
+localStorage.setItem( "userEmail" , document.getElementById('email').value);
 
-// })
-
-
-
-// //name Validation
-
-// fullName.onsubmit= function nameValidation(){
-//     let nameRegex=/^([A-ZÀ-ÿ][-,a-z. ']+[ ]*)$/;
-//     let valResult=nameRegex.test(fullName.value);
-
-//     if(valResult==false){
-//         console.log("wrong input")
-//         fullName.style.backgroundColor='#ff9999';
-
-//     }
-//     return true;      
-// }
+//save email to local storage
+function saveToLocalStorage() {
+    const inputValue = userEmail.value;
+    localStorage.setItem('email', inputValue);
+    alert('Saved!');
+}
 
 
-// //userName Validation
+//sign up form validation
 
-// userName.onkeyup= function userNameValidation(){
-//     let nameRegex=/^[0-9A-Za-z]{6,16}$/;
-//     let valResult=nameRegex.test(userName.value);
-//     if(valResult==false){
-//         console.log("wrong input")
-//         userName.style.backgroundColor='#ff9999';
+//fullname validation
 
-//     }else{
-//     localStorage.setItem("userName",userName.value);
-//     return true;
-//     }
-// }
+function validateName(){
+    if (fullName.value.length > 10 || fullName.value.length == " ") 
+    {
+        errorText.textContent = "Only 10 letters are allowed!";
+        signUpBtn.setAttribute('disabled')
+    }
+}
 
+validateName();
 
-// //Email Validation
+//email validation
 
-// userEmail.onkeyup=function emailValidation(){
-//     let emailRegex=/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-//     let valresult=emailRegex.test(userEmail.value);
-
-//     if(valresult==false){
-//         console.log("wrong input")
-//         userEmail.style.backgroundColor='#ff9999';
-
-//     }
-//     return true;
-// }
+function validateUserName(){
+    if (userName.value.length > 10 || userName.value.length == "") 
+    {
+        errorText.textContent = "Only 10 letters are allowed!";
+        signUpBtn.setAttribute('disabled')
+    }
+}
 
 
 
-//     //Password Validation
+//username validation
 
-//     password.onkeyup=function passValidation(){
-//         let passwordRegex=/^(?=.*\d)(?=.*[a-z])[0-9a-zA-Z]{8,}$/;
-//         let valresult=passwordRegex.test(password.value);
+function validateUserName(){
+    if (userName.value.length > 10 || userName.value.length == "") 
+    {
+        errorText.textContent = "Only 10 letters are allowed!";
+        signUpBtn.setAttribute('disabled')
+    }
+}
 
-//         if(valresult==false){
-//             console.log("wrong input")
-//             password.style.backgroundColor='#ff9999';
-//         }
-//         return true;
-//     }
-
-
-//     //repassword validation
-
-//     repassword.onkeyup=function confirmPassword() {
-//         if (password.value!== repassword.value) {
-           
-//            console.log('Passwords do not match.');
-//            repassword.placeholder='Passwords do not match.';
-
-//         } else {
-//            console.log('great'); 
-//         }
-//     }
+//hellloooo
 
 
+//email validation
+
+userEmail.onkeyup=function emailValidation(){
+    userEmail.value;
+    let emailRegex=/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    let valresult=emailRegex.test(userEmail.value);
+
+    if(valresult==false){
+        document.getElementById("emailError").textContent="email should be ahmedxyz@gmail.com";
+
+    }
+    return true;
+ }

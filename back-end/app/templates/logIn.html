@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Invoice App</title>
-    <link rel="stylesheet" href="../static/style.css" />
+    <link rel="stylesheet" href="../static/signUp.css" />
   </head>
   <body>
     
@@ -38,14 +38,14 @@
             />
           </div>
 
-          <button type="submit" class="signup-btn">Sign In</button>
+          <button type="submit" class="signup-btn" onclick="saveToLocalStorage()">Sign In</button>
           
           <p>Don't have an account? <a href="{{url_for('users.register')}}">Register now</a></p>
         </form>
       </div>
     </div>
 
-    <script src="../static/login.js"></script>
+    <script src="../static/signUp.js"></script>
     
   </body>
 </html>

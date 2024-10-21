@@ -1,4 +1,17 @@
 
+//get email from local storage
+
+function splitEmail(email) {
+  let namePart = email.split('@')[0];
+  let nameArray = namePart.split(/[._]/); 
+  let formattedName = nameArray.map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+
+  return formattedName;
+}
+
+let savedName = splitEmail(localStorage.getItem("email"));
+
+document.getElementById('displayValue').innerText = "Welcome " + savedName;
 
 // Configuration object for the fetch request
 const options = {

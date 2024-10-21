@@ -9,12 +9,19 @@
   <body>
     <div class="add-invoice-page">
       <div class="add-invoice">
-        <a href="history.html" class="history">go back</a>
+      <div class="formContainer">
+        <div class="addText">
+          
+          <h2>Add an Invoice</h2>
+          <a href="/home" class="backToHome">X</a>
+        </div>
         
-        <h2>Add an Invoice</h2>
+         
         <form class="add-form"  action = "{{url_for("invoices.add")}}" method = "POST">
-          <h4>Bill From :</h4>
+          <h4>Issuer Name :</h4>
           <div class="main-info">
+   
+
             <input
               type="text"
               id="billName"
@@ -23,10 +30,8 @@
               required
             />
 
-            <label class="switch">
-              <input type="checkbox" id="status" name="status" value="Pending" />
-              <span class="slider round" id="sliderBtn" >Pending</span>
-            </label>
+            <button id="status"  class="statusBtn" name="status" value="Pending">Pending</button>
+            
           </div>
 
           
@@ -57,8 +62,13 @@
           <button class="submit-btn" type="submit">Submit</button>
         </form>
       </div>
+       
+      </div>
     </div>
 
+
+
+    
 
 
     <script src="../static/main.js"></script>
