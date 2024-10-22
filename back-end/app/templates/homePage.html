@@ -18,7 +18,8 @@
       <div class="mainNav">
         <a class="active" href="#home">Invoicer</a>
         <h3 id="displayValue"> </h3>
-        <a href="{{url_for('users.logout')}}" ><i class="fa-solid fa-right-from-bracket"></i></a>
+       
+        <a href="{{url_for('users.logout')}}" > <i class="fa-solid fa-right-from-bracket"></i></a>
        
         
       </div>
@@ -28,7 +29,7 @@
         
         <div class="topnav">
           <h3>your invoices</h3>
-          <h3> <a class="history" href="{{url_for("invoices.get_history")}}">history</a> </h3>
+          <h3> <a class="history" href="{{url_for("invoices.get_old_invoices")}}"><i class="fa-solid fa-list"></i></a> </h3>
  
         </div>
 
@@ -80,7 +81,6 @@
                 <th>Due Date</th>
                 <th>Statues</th>
                 <th>Action</th>
-                <th>Edit</th>
              
               </thead>
               <tbody id="invoicesRow">
@@ -92,9 +92,10 @@
                   <td>{{item.due_date}}</td>
                   <td> <a class="statues">{{item.status}}</a></td>
                   <td> 
-                    {% if item.status == 'Paid' %} <button class="deleteBtn" id="deleteBtn" onclick="deleteInvoice('{{item.id}}')">Delete</button> {% endif %} 
-                    {% if item.status == 'Pending' %} <button class="markAsPaidBtn" id="markAsPaidBtn" onclick="markInvoiceAsPaid('{{item.id}}')">Mark As Paid</button>{% endif %}  </td>
-                    <td  ><a class="editBtn"  href="{{url_for('invoices.update', id=item.id)}}">Edit</a></td>
+                    {% if item.status == 'Paid' %} <button class="deleteBtn" id="deleteBtn" title="Delete" onclick="deleteInvoice('{{item.id}}')"><i class="fa-solid fa-trash"></i></button> {% endif %} 
+                    {% if item.status == 'Pending' %} <button class="markAsPaidBtn" id="markAsPaidBtn" title="Mark As Paid" onclick="markInvoiceAsPaid('{{item.id}}')"><i class="fa-solid fa-check"></i></button>{% endif %} 
+                    <a class="editBtn"  href="{{url_for('invoices.update', id=item.id)}}" title="Edit"><i class="fa-solid fa-pen"></i></a>
+                  </td>
                   </tr>
                 {% endfor %}
                 

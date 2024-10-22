@@ -18,8 +18,8 @@
           <p >{{error}}</p>
           <div class="labels">
             <label>Full Name:</label>
-            <input type="text" id="fullName" name="full_name" placeholder="Full Name"  />
-            <span id="nameError"></span>
+            <input type="text" id="fullName" name="full_name" placeholder="Full Name" required maxlength="10"/>
+           
           
           </div>
           
@@ -31,16 +31,17 @@
               id="userName"
               name="username"
               placeholder="Username"
-              
+              required
+              maxlength="10"
             />
-            <span id="userError"></span>
+           
           </div>
           
 
           <div class="labels">
             <label>Email:</label>
-          <input type="text" id="email" name="email" placeholder="Email" />
-          <span id="emailError"></span>
+          <input type="email" id="email" name="email" placeholder="Email" required />
+          <span id="emailAlert" class="emailAlert"></span>
           </div>
           
 
@@ -51,10 +52,11 @@
               id="password"
               name="password"
               placeholder="Password"
-              
+              required
+              maxlength="10"
             />
 
-            <span id="passError"></span>
+            
             
           </div>
          
@@ -68,12 +70,15 @@
             id="repassword"
             name="confirm_password"
             placeholder="Confirm Password"
+            required
+            maxlength="10"
          />
-          <span id="confirmError"></span>
+         
           </div>
           
 
           <button class="signup-btn" type="submit" id="signUpBtn" onclick="saveToLocalStorage()">Sign Up</button>
+
           <p>Already have an account? <a href="{{url_for('users.login')}}">Sign In</a></p>
           
         </form>

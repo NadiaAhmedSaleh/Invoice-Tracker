@@ -10,10 +10,15 @@
     <div class="add-invoice-page">
 
       
-      <div class="add-invoice">
-        <h2>Edit an Invoice</h2>
+      <div class="addInvoice">
+
+        <div class="addText"> 
+          <h2>Edit an Invoice</h2>
+          <a href="/home" class="backToHome">X</a>
+        </div>
+        
         <form class="add-form" action = "{{url_for("invoices.update")}}" method = "POST">
-          <h4>Bill From :</h4>
+          <h4>Issuer Name:</h4>
           <div class="main-info">
             <input
               type="text"
@@ -66,6 +71,6 @@
     </div>
 
 
-    <script src="../static/main.js"></script>
+
   </body>
 </html>

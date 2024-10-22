@@ -11,7 +11,7 @@ function splitEmail(email) {
 
 let savedName = splitEmail(localStorage.getItem("email"));
 
-document.getElementById('displayValue').innerText = "Welcome " + savedName;
+document.getElementById('displayValue').innerText = "Welcome " + savedName ;
 
 // Configuration object for the fetch request
 const options = {

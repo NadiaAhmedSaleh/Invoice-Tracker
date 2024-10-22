@@ -7,7 +7,7 @@ from datetime import datetime
 from flask_login import login_required , current_user
 from sqlalchemy import and_ 
 from pathlib import Path
-
+import os.path
 # path var      delete/<id>     delete/5
 # arg param           /list?status=Paid&date=12312312 
 
@@ -139,3 +139,20 @@ def get_history():
       invoice_history_file.close()
       history=content.split("\n")
    return render_template("history.html" , invoice_history=history)
+
+
+##read from txt file 
+## write it into the new html page
+## would the same function send the user to the html page and then read from txt file??
+@invoices_bp.route("/old-invoices", methods=['GET'])
+@login_required
+def get_old_invoices():
+   history = []
+   filepath =  Path('../../' + str(current_user.id))
+   if not (filepath.is_file()):
+      filename = str(current_user.id) + ".txt"
+      invoice_history_file=open(filename)
+      content=invoice_history_file.read()
+      invoice_history_file.close()
+      history=content.split("\n")
+   return render_template("history.html" , invoice_history=content)

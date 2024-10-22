@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guests</title>
+    <title>Invoices History</title>
      
 </head>
 <body>
 
 
+  <textarea name="historyInvoices" class="invoiceHistory" cols="180" rows="30" charswidth="23" disabled >
+    {{invoice_history}}
+  </textarea>
+
  
-  {{invoice_history}}
-    
-  <script type="text/javascript">
-    var invoice_history = '{{invoice_history}}';
-    console.log(invoice_history)
-  </script>
+ 
+ 
+
+
 </body>
 </html>

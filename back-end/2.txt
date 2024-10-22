@@ -1,0 +1,2 @@
+{'id': 36, 'issuer': 'what', 'status': 'Paid', 'amount': 5050, 'date_issued': datetime.date(2024, 10, 31), 'due_date': datetime.date(2024, 10, 31), 'user_id': 2}
+{'id': 35, 'issuer': 'no', 'status': 'Paid', 'amount': 5050, 'date_issued': datetime.date(2024, 10, 23), 'due_date': datetime.date(2024, 10, 31), 'user_id': 2}
