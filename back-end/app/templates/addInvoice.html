@@ -39,24 +39,36 @@
 
           <h4>Bill Information :</h4>
           <div class="bill-info">
-            <input
-              type="number"
-              id="amount"
-              name="amount"
-              placeholder="Amount"
-              required
-            />
+            <div class="labels">
+              <label for="amount"> Amount: </label>
+              <input
+                type="number"
+                id="amount"
+                name="amount"
+                placeholder="Amount"
+                required
+              />
+  
+            </div>
+           
+            <div class="labels">
+              <label for="date"> Date: </label>
+              <input type="date" id="date" name="date_issued" placeholder="Date" required />
+  
+            </div>
+            
+            <div class="labels">
+              <label for="due">Due Date: </label>
 
-
-            <input type="date" id="date" name="date_issued" placeholder="Date" required />
-
-            <input
-              type="date"
-              id="dueDate"
-              name="due_date"
-              placeholder="Due Date"
-              required
-            />
+              <input
+                type="date"
+                id="dueDate"
+                name="due_date"
+                placeholder="Due Date"
+                required
+              />
+            </div>
+           
           </div>
 
           <button class="submit-btn" type="submit">Submit</button>

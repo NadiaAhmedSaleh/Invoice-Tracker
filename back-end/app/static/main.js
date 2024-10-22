@@ -1,4 +1,3 @@
-
 //get email from local storage
 
 function splitEmail(email) {
@@ -60,3 +59,6 @@ function markInvoiceAsPaid(id) {
       );
     });
 }
+
+
+

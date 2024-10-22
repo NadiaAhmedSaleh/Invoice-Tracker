@@ -45,7 +45,7 @@ body{
 }
 
 .mainNav a{
-  color: white;
+    color: white;
     font-weight: 500;
     text-align: center;
     padding: 10px;
@@ -80,6 +80,7 @@ body{
     padding: 0;
   }
   
+
  
   .totalForm{
     padding:0 20px 10px 20px;
@@ -336,10 +337,30 @@ body{
     align-items: center;
   }
 
+  .labels{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    color:#52b46e;
+    width: 100%;
+
+  }
+
+  .labels input{
+    width: 70%;
+  }
+
+  label{
+    margin: 5px 10px 5px 10px;
+    font-weight: 500;
+  }
 
 
   .submit-btn{
    
+    display: block;
+    margin: auto;
     width: 140px;
     height: 30px;
     border-radius: 50px;
@@ -357,12 +378,20 @@ body{
     transition: 0.3s;
   }
 
-
+ /*-----------------------------------*/
   /* history page */
 
   .invoiceHistory{
-    width: 100%;
+    width: 95%;
+    margin-top: 50px;
+    
   }
+
+  .historyPage{
+   text-align: center;
+   color:#04AA6D;
+  }
+
 
 
   /* media query */
@@ -379,6 +408,10 @@ body{
       flex-direction: column;
   }
 
+  .addInvoice{
+    width: 80%;
+  }
+
   .mainSection{
     width: 90%;
   }
@@ -389,6 +422,10 @@ body{
     flex-direction: column;
     gap: 10px;
 
+  }
+
+  .labels input{
+    width: 90%;
   }
  
 }

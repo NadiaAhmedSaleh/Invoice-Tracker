@@ -44,25 +44,36 @@
 
           <h4>Bill Information :</h4>
           <div class="bill-info">
-            <input
-              type="number"
-              id="amount"
-              name="amount"
-              placeholder="Amount"
-              value={{invoice.amount}}
-              
-            />
+            <div class="labels">
+              <label for="amount"> Amount: </label>
+              <input
+                type="number"
+                id="amount"
+                name="amount"
+                placeholder="Amount"
+                value={{invoice.amount}}
+              />
+  
+            </div>
+           
+            <div class="labels">
+              <label for="date"> Date: </label>
+              <input type="date" id="date" name="date_issued" placeholder="Date" value={{invoice.date_issued}} />
+  
+            </div>
+            
+            <div class="labels">
+              <label for="due">Due Date: </label>
 
-            <input type="date" id="date" name="date_issued" placeholder="Date" value={{invoice.date_issued}}  />
-
-            <input
-              type="date"
-              id="dueDate"
-              name="due_date"
-              placeholder="Due Date"
-              value={{invoice.due_date}}
-              
-            />
+              <input
+                type="date"
+                id="dueDate"
+                name="due_date"
+                placeholder="Due Date"
+                value={{invoice.due_date}}
+              />
+            </div>
+           
           </div>
 
           <button class="submit-btn" type="submit">Submit</button>
