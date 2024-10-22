@@ -7,14 +7,14 @@ Invoice tracker is a user-friendly website through which you can track and manag
 it saves all your invoices in which you can check what is paid and what is pending and keep a history of the paid invoices too.
 
 # Prerequisites:
-Python: Install Python from the official website: python.org
-Flask: pip3 install flask
-Sqlalchemy: pip3 install sqlalchemy
-Sqlite3 pip install sqlite3
-Login-manager: pip3 install flask-login
-Bcrypt: pip3 install flask-bcrypt
-Cors: pip3 install flask-cors
-Jinja: Jinja is a templating engine used by Flask, and it should be integrated into Visual Studio Code by default when you have the Python extension installed.
+- Python: Install Python from the official website: python.org
+- Flask: pip3 install flask
+- Sqlalchemy: pip3 install sqlalchemy
+- Sqlite3 pip install sqlite3
+- Login-manager: pip3 install flask-login
+- Bcrypt: pip3 install flask-bcrypt
+- Cors: pip3 install flask-cors
+- Jinja: Jinja is a templating engine used by Flask, and it should be integrated into Visual Studio Code by default when you have the Python extension installed.
 
 # Project checklist
 - It is available on GitHub.
