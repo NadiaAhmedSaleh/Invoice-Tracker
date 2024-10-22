@@ -1,7 +1,7 @@
 # Invoice-Tracker
 Track your Invoices
 # What is Invoice-Tracker?
-Invoice tracker is a user-friendly website through which you can track and manageall your invoices.
+Invoice tracker is a user-friendly website through which you can track and manage all your invoices.
 
 # What does it do?
 it saves all your invoices in which you can check what is paid and what is pending and keep a history of the paid invoices too.
