@@ -4,11 +4,8 @@ from app.extensions import db
 from app.models.users import Users
 from flask_login import login_user, logout_user, login_required, current_user
 
-# path var  /5
-# params ?status=Paid
-# body    json
-# form  request.form
 
+#login
 
 @users_bp.route('/login', methods=['GET', 'POST'])
 def login():
@@ -28,6 +25,8 @@ def login():
         return render_template('login.html')
 
 
+#logout
+
 @users_bp.route('/logout')
 @login_required
 def logout():
@@ -36,15 +35,20 @@ def logout():
     return redirect(url_for('users.login'))
 
 
-@users_bp.route('/register', methods=['GET', 'POST'])
-def register():
-    # 1- Take json body inside an object
+
+ # 1- Take json body inside an object
     # 2- check if email already exists
     # 3- check if password and confrim are the same
     # 4- create Users model object
     # 5- save this model using db session add
     # 6- commit the changes
-    # 7- return users model with 201 code 
+    # 7- return homepage 
+
+#register 
+
+@users_bp.route('/register', methods=['GET', 'POST'])
+def register():
+   
     if current_user.is_authenticated:
         return redirect(url_for('home'))
         
@@ -64,9 +68,3 @@ def register():
         return render_template('signup.html')
 
 
-
-# @users_bp.route('/get-current-user', methods=['GET'])
-# @login_required
-# def get_current_user(): 
-#     return current_user
-    

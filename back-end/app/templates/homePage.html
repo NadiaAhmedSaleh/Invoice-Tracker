@@ -36,23 +36,23 @@
         <div class="totalForm">
           <div class="header">
               <p id="totalNumber">There are {{invoices.count()}} in total</p>
-            <hr>
+          
             <div class="buttons-part">
         
-              <button class="add"> 
-                <i class="fa-solid fa-plus"></i>
-                <a class="add-link" href="{{url_for('invoices.add')}}">
-                Add Invoice 
-              </a>
-            </button>
+              
+                
+                <a class="add" href="{{url_for('invoices.add')}}">
+                  <i class="fa-solid fa-plus"></i>  Add Invoice 
+                </a>
+            
   
-              <div>
+              <div class="filterForm" >
                 <form action="{{url_for("invoices.list")}}" method="GET" >
   
                   
                  <div class="filter">
                   <select name="status" id="filter-status" class="filter-status">
-                    <option value="">Filter by Status</option>
+                    <option value="">Filter by Status </option>
                     <option value="Paid" id="paid">Paid</option>
                     <option value="Pending" id="pending">Pending</option>
                   </select>
@@ -76,10 +76,10 @@
             <table >
               <thead>
                 <th>ID</th>
-                <th>Biller name</th>
+                <th>Issuer</th>
                 <th>Amount</th>
                 <th>Due Date</th>
-                <th>Statues</th>
+                <th>Status</th>
                 <th>Action</th>
              
               </thead>
@@ -88,7 +88,7 @@
                 <tr>
                   <td>{{item.id}}</td>
                   <td>{{item.issuer}}</td>
-                  <td><B>{{item.amount}}</B></td>
+                  <td><B> $ {{item.amount}}</B></td>
                   <td>{{item.due_date}}</td>
                   <td> <a class="statues">{{item.status}}</a></td>
                   <td> 

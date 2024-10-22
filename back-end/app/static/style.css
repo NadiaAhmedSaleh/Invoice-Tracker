@@ -82,37 +82,48 @@ body{
   
  
   .totalForm{
-    padding:0 20px 0 20px;
+    padding:0 20px 10px 20px;
   }
   
   #totalNumber{
     color:#04AA6D;
-    margin: 10px;
+   
     font-weight: 500;
   }
 
 
 
-/*buttons part */
+/* buttons part */
 
 .buttons-part{
   display: flex;
   justify-content: space-between;
-  margin: 10px;
-
-  
+  margin: 10px; 
 }
-
 
 
 .add{
   border-radius: 50px;
   background-color: #FFFFFF;
   color:#2e974b;
-  font-weight: 700;
+  font-weight: 500;
+  font-size: 15px;
+  width: 120px;
   border:1px solid #5FC67D;
+  margin-top: 5px;
+  text-decoration: none;
+  text-align: center;
+  padding-top: 5px
   
 }
+
+.add:hover{
+  background-color: #5FC67D;
+  color: white;
+  transition: 0.5s;
+  border: none;
+}
+
 
 .fa-plus {
   font-size: 15px;
@@ -121,16 +132,13 @@ body{
   border-radius: 50%;
   background-color: white;
   border:  2px solid #5FC67D;
-
-  
 }
-
-
 
   .add-link{
     text-decoration: none;
     color:#04AA6D;
     font-weight: 500;
+  
   }
 
   .filter-status{
@@ -143,9 +151,16 @@ body{
     border: none;
     color: white;
     font-weight: 500;
-    cursor: pointer;
+    
     
   }
+
+  .filter-status:focus{
+    outline-style: none;
+  }
+
+
+  /*  table  */
 
  .table{
     overflow-x:auto;
@@ -156,16 +171,38 @@ body{
     width: 100%; 
   }
   
+  
+  th, td {
+    text-align: left;
+    padding: 16px;
+    
+    
+  }
+
+  th{
+    background-color: #dcf3e1;
+  }
+  
+  tr{
+    margin-top: 10px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+    
+  }
+
+  tr:hover{
+    background-color: #dcf3e1;
+  }
 
 
   
-/* table button*/
+/* table buttons*/
 
   
 
 .deleteBtn{
   border: none;
-  background-color: #FFFFFF;
+  background: none;
   color:#E0383C;
   font-size: 20px;
   cursor: pointer;
@@ -174,9 +211,14 @@ body{
 
 }
 
+.deleteBtn:hover{
+  color:#fd4346;
+  transition: 1.5s;
+}
+
 .markAsPaidBtn{
   border: none;
-  background-color: #FFFFFF;
+  background: none;
   color: #E0383C;
   font-size: 20px;
   cursor: pointer;
@@ -185,6 +227,10 @@ body{
 
 }
 
+.markAsPaidBtn:hover{
+  color:#fd4346;
+  transition: 0.5s;
+}
 
 .editBtn{
 
@@ -194,26 +240,16 @@ body{
   cursor: pointer;
 }
 
-  th, td {
-    text-align: left;
-    padding: 16px;
-  }
-
-  tr{
-    margin-top: 10px;
-    background-color: #ffffff;
-    box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
-    
-  }
-
+.editBtn:hover{
+  color: #06cc83;
+  transition: 0.5s;
+}
 
   .statues{
 
     background-color: #FFF9EF;
-    width: 30px;
-    height: 30px;
-    padding:5px 15px 5px 15px;
-    border-radius: 10px;
+    padding:3px 10px 3px 10px;
+    border-radius: 5px;
     color: orange;
     font-weight: 600;
     border: 1px solid orange;
@@ -304,13 +340,14 @@ body{
 
   .submit-btn{
    
-    width: 120px;
+    width: 140px;
     height: 30px;
     border-radius: 50px;
     background-color: #FFFFFF;
     color:#2e974b;
     font-weight: 700;
     border:1px solid #5FC67D;
+    margin-top: 5px;
   }
   
   .submit-btn:hover{
@@ -327,14 +364,31 @@ body{
     width: 100%;
   }
 
+
+  /* media query */
   
 @media (max-width: 900px) {
+
+  .buttons-part{
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
   .bill-info {
       flex-direction: column;
   }
 
   .mainSection{
     width: 90%;
+  }
+
+  
+  .filter{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
   }
  
 }

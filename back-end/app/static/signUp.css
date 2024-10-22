@@ -5,6 +5,15 @@
   background-color: #C4E9CB;
   }
 
+  .loginContainer{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: space-around;
+    width: 50%;
+    margin: auto;
+    color:#52b46e;
+  }
   .container {
     display: flex;
     flex-wrap: wrap;
@@ -12,58 +21,65 @@
     justify-content: space-around;
     width: 60%;
     margin: auto;
+    color:#52b46e;
    
 
 }
-.container div {
-    gap: 10px;
-}
+
 label {
     margin: 10px 0px 10px 0px;
     display: block;
+    font-size: 15px;
+    font-weight: 600;
 }
 
 
-.formContainer {
-    background-color: #FFFFFF;
-    color: green;
-    padding: 5px 20px 15px 20px;
-    border-radius: 3px;
-    width: 100%;
+.left{
+  width: 50%;
 }
 
-
+.right{
+  width: 50%;
  
-  .sign-up{
+}
+ 
+  .fullContainer{
    
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    align-content: center;
-    height: 100vh;
-    width: 90%;
+    align-content: center; 
+    width: 100%;
     color:#5FC67D;
+    height: 70%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 9px 9px 9px 9px rgba(0.1,0.1,0.1,0.1);
   }
 
   
 
   .text{
-    color:#5FC67D;
+    color:#52b46e;
   }
 
   .text h1{
     margin: 10px;
   }
   
+  #loginForm{
+    gap: 10px;
+    padding: 15px;
+    
+  }
 
-  .signUpForm{
-    background-color: white;
+  .form{
+   
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+   
     border-radius: 20px;
     margin-top: 10px;
     text-align: center;
@@ -87,6 +103,7 @@ label {
     justify-content: center;
     align-items: start;
     width: 80%;
+    color:#52b46e;
 
   }
 
@@ -104,12 +121,17 @@ label {
   }
 
 
+  a{
+    color: #52b46e;
+    text-decoration: none;
+    font-weight: 900;
+  }
 
   .signup-btn{
     width: 150px;
     height: 40px;
     border-radius: 50px;
-    background-color: #5FC67D;;
+    background-color: #5FC67D;
     color: white;
     font-weight: 700;
     border:none;
@@ -120,9 +142,9 @@ label {
     
     border-radius: 50px;
     background-color: #FFFFFF;
-    color: #5FC67D;;
+    color:#52b46e;
     font-weight: 700;
-    border:1px solid #5FC67D;;
+    border:1px solid  #52b46e;
     transition: 0.5s;
     outline: none;
     
@@ -130,7 +152,7 @@ label {
 
   .sign-up a{
     text-decoration: none;
-    color:#5FC67D;
+    color:#52b46e;
     font-weight: 700;
   }
 
@@ -138,7 +160,15 @@ label {
 
   @media (max-width: 900px) {
     .container{
-      width: 100%;
+      width: 80%;
+      padding: 0;
+      
+    }
+    .right{
+      display: none;
+    }
+    .left{
+      width: 100%
     }
    
   }

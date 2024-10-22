@@ -8,8 +8,6 @@ from flask_login import login_required , current_user
 from sqlalchemy import and_ 
 from pathlib import Path
 import os.path
-# path var      delete/<id>     delete/5
-# arg param           /list?status=Paid&date=12312312 
 
 #List invoices
 @invoices_bp.route('/list', methods=['GET'])
@@ -18,12 +16,12 @@ def list():
    status_arg = request.args.get('status') 
     ##select all from invoices where current_user.id == user_id
     ##select all from invoices where status = paid and user_id =4
-   if status_arg is None:
+   if status_arg is None or status_arg == "":
       invoices = Invoice.query.filter_by(user_id=current_user.id)
    else: 
       invoices = Invoice.query.filter(and_(Invoice.user_id == current_user.id , Invoice.status == status_arg)) 
    return render_template('homePage.html', invoices=invoices)
-   #return make_response(jsonify(invoices=[i.serialize for i in invoices]), 200)
+   
      
 #Create invoice#
 
@@ -52,7 +50,7 @@ def add():
 @login_required
 def delete(id):
    invoice = Invoice.query.get(id)
-   # - open el file
+   # - open the file
    # - add a new line in the file with invoice.serialize() 
    # - close the file 
    #- print(invoice.serialize)
