@@ -109,7 +109,9 @@ body{
   color:#2e974b;
   font-weight: 500;
   font-size: 15px;
-  width: 120px;
+  width: 140px;
+  height: 30px;
+  border-radius: 50px;
   border:1px solid #5FC67D;
   margin-top: 5px;
   text-decoration: none;

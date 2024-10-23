@@ -7,6 +7,7 @@ from flask_cors import CORS
 
 login_manager = LoginManager()
 
+#main imports and configs
 
 def create_app(configirations=Config):
     app = Flask(__name__)
@@ -21,6 +22,9 @@ def create_app(configirations=Config):
     from app.users import users_bp
     app.register_blueprint(users_bp, url_prefix='/users')
     
+
+    #main route if current is annyonymous then redirect to login
+    #if current_user exists then redirect to invoices.list
     @app.route('/')
     @app.route('/home')
     def home():

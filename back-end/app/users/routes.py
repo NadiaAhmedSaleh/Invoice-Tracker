@@ -4,6 +4,13 @@ from app.extensions import db
 from app.models.users import Users
 from flask_login import login_user, logout_user, login_required, current_user
 
+#check if user is already logged in then render his home
+#if not then check on email and password from front
+#get the user that has the same email 
+#check on its password
+#if all good then log in and render his home
+#if not good then render the login page again
+
 
 #login
 
@@ -18,12 +25,15 @@ def login():
         # if user and user.check_password(password):
         if user and user.password == password:
             login_user(user)
-            return redirect(url_for('home', user=user))#make_response(jsonify(user.serialize), 200)
+            return redirect(url_for('home', user=user))
         else:
             return render_template('login.html', error='Incorrect email or password')
     else:
         return render_template('login.html')
 
+
+#you have to be logged in to logout
+#if not redirect to login page
 
 #logout
 
@@ -36,13 +46,13 @@ def logout():
 
 
 
- # 1- Take json body inside an object
-    # 2- check if email already exists
-    # 3- check if password and confrim are the same
-    # 4- create Users model object
-    # 5- save this model using db session add
-    # 6- commit the changes
-    # 7- return homepage 
+# 1- Take json body inside an object
+# 2- check if email already exists
+# 3- check if password and confrim are the same
+# 4- create Users model object
+# 5- save this model using db session add
+# 6- commit the changes
+# 7- return homepage 
 
 #register 
 

@@ -9,6 +9,12 @@ from sqlalchemy import and_
 from pathlib import Path
 import os.path
 
+
+#check on status
+#check on user id
+#get invoices of that specific user and display it in homepage
+#filter by status if the user entered a status
+
 #List invoices
 @invoices_bp.route('/list', methods=['GET'])
 @login_required
@@ -22,7 +28,13 @@ def list():
       invoices = Invoice.query.filter(and_(Invoice.user_id == current_user.id , Invoice.status == status_arg)) 
    return render_template('homePage.html', invoices=invoices)
    
-     
+
+
+#if method is post 
+# render the add.html page
+# add invoices data and automatically set status to pending
+# add data to db and commit
+# then redeirect to homepage     
 #Create invoice#
 
 @invoices_bp.route('/add', methods=['GET','POST'])
@@ -44,17 +56,20 @@ def add():
       return render_template("addInvoice.html")
  
 
+#get invoice with the same id sent in the parameter
+#check if the status is paid 
+#delete the invoice from db 
+#open file and write in it
 
 #Delete invoice
 @invoices_bp.route('/delete/<id>' , methods=['DELETE'])
 @login_required
 def delete(id):
    invoice = Invoice.query.get(id)
-   # - open the file
-   
-   # - add a new line in the file with invoice.serialize() 
+   # - open a new file if the user doesn't have one or append to an exisiting one
+   # - write the invoice in the file
    # - close the file 
-   #- print(invoice.serialize)
+   
    if current_user.id == invoice.user_id:
       if invoice.status=="Paid":  
          history_file = open(str(current_user.id) + ".txt", "a+" )
@@ -69,10 +84,11 @@ def delete(id):
    else:
       return render_template('homePage.html', msg="unauthorized")
 
-# q- Input: Path Var called id    - PUT
-# OutPut:  if status = pending set -> Paid then return Updated invoice obj with 200   
-#  else return 400 with message error its already paid 
-##mark as paid
+
+#check on the status
+#if the status is pending 
+#then change it to paid
+# then commit changes 
 
 #Mark as paid
 @invoices_bp.route('/mark-as-paid/<id>' , methods=['PUT'])
@@ -84,16 +100,17 @@ def mark_as_paid(id):
     if invoice.status=="Pending":
        invoice.status="Paid"
        db.session.commit()
-       # return redirect(url_for('invoices.list'), code=303)
+       
        return make_response("successfully changed" , 200)
     else:
        return make_response("you can't change this" , 400)   
  else:
       return make_response("unauthorized", 401)
 
-# q- Input: Json object of invoice  - PUT
-# OutPut: return Updated invoice obj with 200   
-#update invoice
+ 
+#get the needed to change invoice
+#edit it
+#commit to db
 
 #Edit an invoice
 @invoices_bp.route('/update', methods=['GET','POST' ])
@@ -120,29 +137,13 @@ def update():
       invoice = Invoice.query.get(id_arg)
       return render_template("editInvoice.html" , invoice=invoice)
  
-# 1- GET   -> HTML
-# post aw put -> form -> home
 
-
-##read from txt file 
-## write it into the new html page
-## would the same function send the user to the html page and then read from txt file??
-@invoices_bp.route("/history", methods=['GET'])
-@login_required
-def get_history():
-   history = []
-   filename = str(current_user.id) + ".txt"
-   if Path.is_file(filename):
-      invoice_history_file=open(filename)
-      content=invoice_history_file.read()
-      invoice_history_file.close()
-      history=content.split("\n")
-   return render_template("history.html" , invoice_history=history)
 
 
 ##read from txt file 
 ## write it into the new html page
-## would the same function send the user to the html page and then read from txt file??
+#render the history.html page
+
 @invoices_bp.route("/old-invoices", methods=['GET'])
 @login_required
 def get_old_invoices():
