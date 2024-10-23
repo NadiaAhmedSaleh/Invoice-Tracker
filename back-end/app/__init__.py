@@ -10,6 +10,7 @@ login_manager = LoginManager()
 
 def create_app(configirations=Config):
     app = Flask(__name__)
+  
     CORS(app)
     app.config.from_object(configirations)
     db.init_app(app)

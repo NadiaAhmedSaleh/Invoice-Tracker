@@ -51,6 +51,7 @@ def add():
 def delete(id):
    invoice = Invoice.query.get(id)
    # - open the file
+   
    # - add a new line in the file with invoice.serialize() 
    # - close the file 
    #- print(invoice.serialize)

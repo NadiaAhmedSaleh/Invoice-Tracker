@@ -15,14 +15,14 @@ document.getElementById('displayValue').innerText = "Welcome " + savedName ;
 // Configuration object for the fetch request
 const options = {
   method: "DELETE",
-  credentials: "include",
+  credentials: "include"
 };
 
 
 
 // Send the DELETE request using fetch
 function deleteInvoice(id) {
-  fetch(`http://localhost:5000/invoices/delete/${id}`, options)
+  fetch(`http://127.0.0.1:5000/invoices/delete/${id}`, options)
     .then((response) => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
@@ -40,11 +40,11 @@ function deleteInvoice(id) {
 
 const markOptions = {
   method: "PUT",
-  credentials: "include",
+  credentials: "include"
 };
 
 function markInvoiceAsPaid(id) {
-  res = fetch(`http://localhost:5000/invoices/mark-as-paid/${id}`, markOptions)
+  res = fetch(`http://127.0.0.1:5000/invoices/mark-as-paid/${id}`, markOptions)
     .then((response) => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
