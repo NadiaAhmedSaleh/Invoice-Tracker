@@ -12,7 +12,6 @@ it saves all your invoices in which you can check what is paid and what is pendi
 - Sqlalchemy: pip3 install sqlalchemy
 - Sqlite3 pip install sqlite3
 - Login-manager: pip3 install flask-login
-- Bcrypt: pip3 install flask-bcrypt
 - Cors: pip3 install flask-cors
 - Jinja: Jinja is a templating engine used by Flask, and it should be integrated into Visual Studio Code by default when you have the Python extension installed.
 
